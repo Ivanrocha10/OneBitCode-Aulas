@@ -76,3 +76,4 @@ const dadosDoUser = {
 }
 
 poucosParametros(dadosDoUser)
+console.log(dadosDoUser)
