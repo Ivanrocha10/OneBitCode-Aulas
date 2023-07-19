@@ -1,0 +1,16 @@
+h1 {
+  color: purple;
+  font-size: 50px;
+  border: yellow dashed 2px;
+}
+
+li {
+  color: green;
+}
+
+body {
+  background-image: url('https://t.ctcdn.com.br/GbK2x2D16IPr0NYbTvnRxZJxrhI=/512x288/smart/filters:format(webp)/i374256.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

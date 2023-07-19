@@ -1,0 +1,21 @@
+p {
+  font-family: 'Montserrat', sans-serif;;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 3;
+
+}
+
+h1 {
+  text-align: center;  
+  text-decoration: line-through;
+  font-family: 'Geostar', cursive;
+  margin: 45px auto 200px auto;
+  width: 15%;
+  border: 10px solid rebeccapurple;
+}
+
+
+/*font-family: 'Geostar', cursive;
+font-family: 'Roboto', sans-serif;
+font-family: 'Montserrat', sans-serif;*/

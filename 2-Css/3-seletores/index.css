@@ -1,0 +1,18 @@
+.moon {
+  color: blue;
+  font-size: 20px;
+}
+
+.big {
+  font-size: 50px;
+}
+
+#euro {
+  text-align: center;
+  font-size: 20px;
+  color: chartreuse;
+}
+
+ul {
+  color: grey;
+}
