@@ -111,12 +111,45 @@ function excluirVaga() {
 }
 
 function exibirMenu() {
-  'Cadastro de Vagas de Emprego' +
-    '\n\nEscolha uma das opções:' +
-    '\n1. Listar vagas disponíveis' +
-    '\n2. Criar uma nova vaga' +
-    '\n3. Visualizar uma vaga' +
-    '\n4. Inscrever um(a) candidato(a)' +
-    '\n5. Excluir uma vaga' +
-    '\n6. Sair'
+  const opcao = prompt(
+    'Cadastro de Vagas de Emprego' +
+      '\n\nEscolha uma das opções:' +
+      '\n1. Listar vagas disponíveis' +
+      '\n2. Criar uma nova vaga' +
+      '\n3. Visualizar uma vaga' +
+      '\n4. Inscrever um(a) candidato(a)' +
+      '\n5. Excluir uma vaga' +
+      '\n6. Sair'
+  )
+  return opcao
+}
+
+function executar() {
+  let opcao = ''
+
+  do {
+    opcao = exibirMenu()
+    switch (opcao) {
+      case '1':
+        listarVagas()
+        break
+      case '2':
+        novaVaga()
+        break
+      case '3':
+        exibirVaga()
+        break
+      case '4':
+        inscreverCandidato()
+        break
+      case '5':
+        excluirVaga()
+        break
+      case '6':
+        alert('Saindo....')
+        break
+      default:
+        alert('[ERRO] Opção inválida...')
+    }
+  } while (opcao !== '6')
 }
