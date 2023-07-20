@@ -4,7 +4,7 @@ function listarVagas() {
   const vagasEmTexto = vagas.reduce(function (textoFinal, vaga, indice) {
     textoFinal += indice + '. '
     textoFinal += vaga.nome
-    textoFinal += ' (' + vaga.candidatos.length + 'candidatos)\n'
+    textoFinal += ' (' + vaga.candidatos.length + ' candidatos)\n'
     return textoFinal
   }, '')
 
@@ -35,18 +35,19 @@ function novaVaga() {
 
 function exibirVaga() {
   const indice = prompt('Informe o índice da vaga que deseja exibir:')
+  if (indice >= vagas.length || indice < 0) {
+    alert('Índice inválido')
+    return
+  }
   const vaga = vagas[indice]
 
-  const candidatosEmTexto = vaga.candidatos.reduce(function (
-    textoFinal,
-    candidato
-  ) {
-    return textoFinal + '\n - ' + candidato
-  },
-  '')
+  const candidatosEmTexto = vaga.candidatos.reduce(
+    (textoFinal, candidato) => textoFinal + '\n - ' + candidato,
+    ''
+  )
 
   alert(
-    'Vaga n° ' +
+    'Vaga nº ' +
       indice +
       '\nNome: ' +
       vaga.nome +
@@ -55,8 +56,8 @@ function exibirVaga() {
       '\nData limite: ' +
       vaga.dataLimite +
       '\nQuantidade de candidatos: ' +
-      vaga.candidato.length +
-      '\nCandidatos inscritos: ' +
+      vaga.candidatos.length +
+      '\nCandidatos inscritos:' +
       candidatosEmTexto
   )
 }
@@ -64,33 +65,33 @@ function exibirVaga() {
 function inscreverCandidato() {
   const candidato = prompt('Informe o nome do(a) candidato(a):')
   const indice = prompt(
-    'Informe o índice da vaga para qual o(a) candidato(a) deseja se inscrever:'
+    'Informe o índice da vaga para a qual o(a) candidato(a) deseja se inscrever:'
   )
   const vaga = vagas[indice]
 
   const confirmacao = confirm(
-    'Deseja increver o candidato ' +
+    'Deseja inscrever o candidato ' +
       candidato +
       ' na vaga ' +
       indice +
       '?\n' +
       'Nome: ' +
       vaga.nome +
-      '\ndescrição: ' +
+      '\nDescrição: ' +
       vaga.descricao +
       '\nData limite: ' +
       vaga.dataLimite
   )
 
   if (confirmacao) {
-    vaga.candidato.push(candidato)
-    alert('Inscrição realizada com sucesso!!')
+    vaga.candidatos.push(candidato)
+    alert('Inscrição realizada com sucesso!')
   }
 }
 
 function excluirVaga() {
   const indice = prompt('Informe o índice da vaga que deseja excluir:')
-  const vaga = vaga[indice]
+  const vaga = vagas[indice]
 
   const confirmacao = confirm(
     'Tem certeza que deseja excluir a vaga ' +
@@ -98,7 +99,7 @@ function excluirVaga() {
       '?\n' +
       'Nome: ' +
       vaga.nome +
-      '\ndescrição: ' +
+      '\nDescrição: ' +
       vaga.descricao +
       '\nData limite: ' +
       vaga.dataLimite
@@ -106,7 +107,7 @@ function excluirVaga() {
 
   if (confirmacao) {
     vagas.splice(indice, 1)
-    alert('Vaga excluida com sucesso!!')
+    alert('Vaga excluída com sucesso!!')
   }
 }
 
