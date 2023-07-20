@@ -67,3 +67,18 @@ const racas = personagens.reduce(function (valorAcumulado, personagem) {
 console.log(racas)
 console.log('///////')
 
+// Sort
+
+ const personagensOrdenados = personagens.slice().sort(function (a, b) {
+  return a.nivel - b.nivel
+})
+
+console.log(personagens)
+console.log(personagensOrdenados)
+console.log('///////')
+
+personagens.sort(function (a, b) {
+  return b.nivel - a.nivel
+})
+
+console.log(personagens)
