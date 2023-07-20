@@ -46,13 +46,77 @@ function exibirVaga() {
   '')
 
   alert(
-    'Vaga n° ' + indice +
-    '\nNome: ' + vaga.nome + 
-    '\nDescrição: ' + vaga.descricao +
-    '\nData limite: ' + vaga.dataLimite +
-    '\nQuantidade de candidatos: ' + vaga.candidato.length +
-    '\nCandidatos inscritos: ' + candidatosEmTexto
+    'Vaga n° ' +
+      indice +
+      '\nNome: ' +
+      vaga.nome +
+      '\nDescrição: ' +
+      vaga.descricao +
+      '\nData limite: ' +
+      vaga.dataLimite +
+      '\nQuantidade de candidatos: ' +
+      vaga.candidato.length +
+      '\nCandidatos inscritos: ' +
+      candidatosEmTexto
   )
 }
 
+function inscreverCandidato() {
+  const candidato = prompt('Informe o nome do(a) candidato(a):')
+  const indice = prompt(
+    'Informe o índice da vaga para qual o(a) candidato(a) deseja se inscrever:'
+  )
+  const vaga = vagas[indice]
 
+  const confirmacao = confirm(
+    'Deseja increver o candidato ' +
+      candidato +
+      ' na vaga ' +
+      indice +
+      '?\n' +
+      'Nome: ' +
+      vaga.nome +
+      '\ndescrição: ' +
+      vaga.descricao +
+      '\nData limite: ' +
+      vaga.dataLimite
+  )
+
+  if (confirmacao) {
+    vaga.candidato.push(candidato)
+    alert('Inscrição realizada com sucesso!!')
+  }
+}
+
+function excluirVaga() {
+  const indice = prompt('Informe o índice da vaga que deseja excluir:')
+  const vaga = vaga[indice]
+
+  const confirmacao = confirm(
+    'Tem certeza que deseja excluir a vaga ' +
+      indice +
+      '?\n' +
+      'Nome: ' +
+      vaga.nome +
+      '\ndescrição: ' +
+      vaga.descricao +
+      '\nData limite: ' +
+      vaga.dataLimite
+  )
+
+  if (confirmacao) {
+    vagas.splice(indice, 1)
+    alert('Vaga excluida com sucesso!!')
+  }
+}
+
+function exibirMenu() {
+  'Cadastro de Vagas de Emprego' +
+    '\n\nEscolha uma das opções:' +
+    '\n1. Listar vagas disponíveis' +
+    '\n2. Criar uma nova vaga' +
+    '\n3. Visualizar uma vaga' +
+    '\n4. Inscrever um(a) candidato(a)' +
+    '\n5. Excluir uma vaga' +
+    '\n6. Sair'
+}
