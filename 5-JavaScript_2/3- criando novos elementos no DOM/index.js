@@ -14,4 +14,8 @@ function addInput() {
 
   newLi.appendChild(newInput)
   ul.appendChild(newLi)
+
+
+
+  
 }
