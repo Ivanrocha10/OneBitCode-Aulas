@@ -33,6 +33,6 @@ form.addEventListener('submit', function (ev) {
     '\nEndereço de entrega: ' + address +
     '\nTipo do pão: ' + breadType +
     '\nRecheio: \n - ' + main + '\n' + salad +
-    'Observações ' + observations
+    'Observações: ' + observations
   )
 })
