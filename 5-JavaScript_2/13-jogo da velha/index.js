@@ -85,6 +85,16 @@ function disableRegion(element) {
   element.removeEventListener('click', handleBoardClick)
 }
 
+function handleWin(regions) {
+  regions.forEach(function (region) {
+    document
+      .querySelector('[data-region="' + region + '"]')
+      .classList.add('win')
+  })
+  const playerName = document.getElementById(turnPlayer).value
+  document.querySelector('h2').innerHTML = playerName + ' Venceu!'
+}
+
 function handleBoardClick(ev) {
   const span = ev.currentTarget
   const region = span.dataset.region
