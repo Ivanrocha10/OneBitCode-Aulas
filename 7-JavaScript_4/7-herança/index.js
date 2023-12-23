@@ -33,4 +33,5 @@ class Apartment extends Property {
 const apt = new Apartment('201', 100, 16000)
 
 console.log(apt)
+console.log(apt.getPricePerSquareMeter())
 console.log(apt.getFloor())
