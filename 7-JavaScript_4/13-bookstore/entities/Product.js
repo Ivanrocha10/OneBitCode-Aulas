@@ -6,8 +6,8 @@ module.exports = class Product {
     this.inStock = inStock
   }
 
-  addtoStock(quantity) {
-    this.inStock = quantity
+  addToStock(quantity) {
+    this.inStock += quantity
   }
 
   removeFromStock(quantity) {

@@ -1,6 +1,6 @@
 const Product = require('./Product')
 
-module.exports = class Books extends Product {
+module.exports = class Book extends Product {
   constructor(
     title,
     synopsis,
