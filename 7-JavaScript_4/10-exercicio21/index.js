@@ -16,7 +16,7 @@ console.table({ ivan, ana, fabio })
 
 fabio.switchStance()
 fabio.attack(ivan)
-ivan.heal(ivan)
-ana.attack(fabio)
+ana.heal(ana)
+ivan.attack(fabio)
 
 console.table({ ivan, ana, fabio })
