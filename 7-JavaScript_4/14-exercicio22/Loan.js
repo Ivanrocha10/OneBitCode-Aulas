@@ -8,8 +8,7 @@ module.exports = class Loan {
     this.installments = []
     for (let i = 1; i <= installments; i++) {
       this.installments.push(
-        new Installment((value * Loan.#fee) / installments),
-        i
+        new Installment((value * Loan.#fee) / installments, i)
       )
     }
     this.createAt = new Date()
