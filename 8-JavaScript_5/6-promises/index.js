@@ -3,16 +3,18 @@
 // rejeitada - rejected
 // finalizada
 
-const p = new Promise((resolve, reject) => {
-  console.log('A promise está sendo executada.')
-  setTimeout(() => {
-    if (true) {
-      reject(false)
-    }
-    console.log('resolvendo a promise....')
-    resolve(true)
-  }, 1000 * 2)
-})
+function execute() {
+  // faz algo
+  return new Promise((resolve, reject) => {
+    console.log('A Promise está sendo executada....')
+    setTimeout(() => {
+      console.log('Resolvendo a Promise...')
+      resolve('Resultado')
+    }, 1)
+  })
+}
+
+const p = execute()
 
 console.log(p)
 
