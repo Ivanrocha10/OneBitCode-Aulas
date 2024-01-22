@@ -1,0 +1,74 @@
+let transactions = []
+
+function createTransactionContainer(id) {
+  const container = document.createElement('div')
+  container.classList.add('transaction')
+  container.id = `transaction-${id}`
+  return container
+}
+
+function createTransactionTitle(name) {
+  const title = document.createElement('span')
+  title.classList.add('transaction-title')
+  title.textContent = name
+  return title
+}
+
+function createTransactionAmount(amount) {
+  const span = document.createElement('span')
+
+  const formatter = Intl.NumberFormat('pt-BR', {
+    compactDisplay: 'long',
+    currency: 'BRL',
+    style: 'currency'
+  })
+  const formatterAmount = formatter.format(amount)
+
+  if (amount > 0) {
+    span.textContent = `${formatterAmount} C`
+    span.classList.add('credit')
+  } else {
+    span.textContent = `${formatterAmount} D`
+    span.classList.add('debit')
+  }
+
+  return span
+}
+
+function renderTransaction(transaction) {
+  const container = createTransactionContainer(transaction.id)
+  const title = createTransactionTitle(transaction.name)
+  const amount = createTransactionAmount(transaction.amount)
+
+  container.append(title, amount)
+  document.querySelector('#transactions').append(container)
+}
+
+async function fetchTransactions() {
+  return await fetch('http://localhost:3000/transactions').then(res =>
+    res.json()
+  )
+}
+
+function updateBalance() {
+  const balanceSpan = document.querySelector('#balance')
+  const balance = transactions.reduce(
+    (sum, transaction) => sum + transaction.amount,
+    0
+  )
+  const formatter = Intl.NumberFormat('pt-BR', {
+    compactDisplay: 'long',
+    currency: 'BRL',
+    style: 'currency'
+  })
+  balanceSpan.textContent = formatter.format(balance)
+}
+
+async function setup() {
+  const results = await fetchTransactions()
+  transactions.push(...results)
+  transactions.forEach(renderTransaction)
+  updateBalance()
+}
+
+document.addEventListener('DOMContentLoaded', setup)
