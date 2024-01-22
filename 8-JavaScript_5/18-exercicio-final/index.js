@@ -26,10 +26,10 @@ function createTransactionAmount(amount) {
 
   if (amount > 0) {
     span.textContent = `${formatterAmount} C`
-    span.classList.add('credit')
+    span.classList.add('transaction-amount', 'credit')
   } else {
     span.textContent = `${formatterAmount} D`
-    span.classList.add('debit')
+    span.classList.add('transaction-amount', 'debit')
   }
 
   return span

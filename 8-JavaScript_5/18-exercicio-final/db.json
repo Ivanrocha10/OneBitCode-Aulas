@@ -11,19 +11,9 @@
       "id": "3"
     },
     {
-      "name": "Conta de água",
-      "amount": -60,
-      "id": "4"
-    },
-    {
-      "name": "Conta de luz",
-      "amount": -150,
-      "id": "5"
-    },
-    {
-      "id": "938d",
       "name": "Lanche",
-      "amount": -30
+      "amount": -100,
+      "id": "938d"
     }
   ]
 }
