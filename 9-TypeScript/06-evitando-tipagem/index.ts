@@ -24,15 +24,15 @@ input = 20
 input = []
 
 
-function verification(test) {
-  if (test) {
+// function verification(test) {
+//   if (test) {
 
-  } else {
-    let _check: never
-    let text = _check
+//   } else {
+//     let _check: never
+//     let text = _check
 
-    text = ''
+//     text = ''
 
-    return _check
-  }
-}
+//     return _check
+//   }
+// }
